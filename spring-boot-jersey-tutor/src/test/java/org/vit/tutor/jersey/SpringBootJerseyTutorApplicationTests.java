@@ -12,5 +12,9 @@ public class SpringBootJerseyTutorApplicationTests {
 	@Test
 	public void contextLoads() {
 	}
+	
+	@Test
+	public void contextLoads_ANOTHER() {
+	}
 
 }
