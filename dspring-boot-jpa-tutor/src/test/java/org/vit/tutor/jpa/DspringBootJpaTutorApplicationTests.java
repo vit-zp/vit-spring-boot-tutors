@@ -1,5 +1,6 @@
 package org.vit.tutor.jpa;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,5 +13,5 @@ public class DspringBootJpaTutorApplicationTests {
     @Test
     public void contextLoads() {
     }
-
+    
 }
