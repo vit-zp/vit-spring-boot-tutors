@@ -15,6 +15,7 @@ import javax.ws.rs.core.MediaType;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.vit.tutor.jersey.model.Message;
+import org.vit.tutor.jersey.resource.comment.CommentResource;
 import org.vit.tutor.jersey.service.message.MessageService;
 
 @Component
@@ -23,6 +24,10 @@ public class MessageResource {
 
 	@Autowired
 	private MessageService messageService;
+	
+	@Autowired
+	private CommentResource commentResource;
+
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -59,4 +64,9 @@ public class MessageResource {
 		return messageService.removeMessage(messageId);
 		}
 
+	@Path("/{messageId}/comments")
+	public CommentResource getAllComments() {
+		return commentResource;
+	}
+	
 }

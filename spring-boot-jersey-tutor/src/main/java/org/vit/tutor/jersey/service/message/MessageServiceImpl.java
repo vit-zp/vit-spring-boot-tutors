@@ -9,13 +9,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.vit.tutor.jersey.database.DatabaseSimulationStuff;
 import org.vit.tutor.jersey.model.Message;
+import org.vit.tutor.jersey.resource.comment.CommentResource;
 
 @Component
 public class MessageServiceImpl implements MessageService {
 	
 	@Autowired
 	private DatabaseSimulationStuff databaseService;
-
+	
+	
 	@Override
 	public List<Message> getAllMessages() {
 		return databaseService.getAllMessagesAsList();
@@ -46,5 +48,4 @@ public class MessageServiceImpl implements MessageService {
 		
 		return databaseService.getAllMessages().remove(messageId);
 	}
-
 }
