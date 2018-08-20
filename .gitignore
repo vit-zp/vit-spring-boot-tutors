@@ -2,6 +2,9 @@
 *.ipr
 *.iml
 
+.project
+
+
 # Compiled class file
 *.class
 
