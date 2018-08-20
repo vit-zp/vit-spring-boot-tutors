@@ -3,6 +3,7 @@
 *.iml
 
 .project
+target
 
 
 # Compiled class file
