@@ -1,13 +1,16 @@
 package org.vit.tutor.jersey.service.message;
 
+import java.util.Date;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.vit.tutor.jersey.database.DatabaseSimulationStuff;
 import org.vit.tutor.jersey.model.Message;
 
+@Component
 public class MessageServiceImpl implements MessageService {
 	
 	@Autowired
@@ -27,8 +30,8 @@ public class MessageServiceImpl implements MessageService {
 	@Override
 	public Message addMessage(Message message) {
 		
-		message.setId(databaseService.getAllMessages().keySet().stream()
-				.reduce((k1, k2) -> {return k1>=k2 ? k1:k2;}).get()+1);
+		message.setId(1L + databaseService.getAllMessages().size());
+		message.setCreatedDate(new Date());
 		return databaseService.getAllMessages().put(message.getId(), message);
 	}
 
@@ -39,9 +42,9 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public Message removeMessage(Message message) {
+	public Message removeMessage(Long messageId) {
 		
-		return databaseService.getAllMessages().remove(message.getId());
+		return databaseService.getAllMessages().remove(messageId);
 	}
 
 }
