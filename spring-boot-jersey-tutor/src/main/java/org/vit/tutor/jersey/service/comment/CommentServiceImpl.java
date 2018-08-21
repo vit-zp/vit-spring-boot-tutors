@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 import org.vit.tutor.jersey.database.DatabaseSimulationStuff;
 import org.vit.tutor.jersey.model.Comment;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -28,8 +29,11 @@ public class CommentServiceImpl implements CommentService {
 
 	@Override
 	public Comment addComment(Long messageId, Comment comment) {
+        Long commentId = 1L + getCommentsByMessageId(messageId).size();
+        comment.setCommentId(commentId);
+        comment.setCreatedDate(new Date());
 		return getCommentsByMessageId(messageId)
-				.put(1L + getCommentsByMessageId(messageId).size(), comment);
+                .put(commentId, comment);
 	}
 
 	@Override
