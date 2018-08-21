@@ -42,8 +42,8 @@ public class CommentServiceImpl implements CommentService {
 	}
 
 	@Override
-	public Comment deleteComment(Long messageId, Comment comment) {
-		return getCommentsByMessageId(messageId).remove(comment.getCommentId());
+	public Comment deleteComment(Long messageId, Long commentId) {
+		return getCommentsByMessageId(messageId).remove(commentId);
 	}
 
 	@Override

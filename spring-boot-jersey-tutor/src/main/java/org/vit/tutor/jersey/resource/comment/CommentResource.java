@@ -7,6 +7,8 @@ import org.vit.tutor.jersey.service.comment.CommentService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -36,15 +38,19 @@ public class CommentResource {
     }
 
     @PUT
+    @Path("/{commentId}")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Comment updateComment(@PathParam("messageId") Long messageId, Comment comment) {
+    public Comment updateComment(@PathParam("messageId") Long messageId, @PathParam("commentId") Long commentId, Comment comment) {
+    	comment.setCommentId(commentId);
+    	comment.setCreatedDate(new Date());
         return commentServcie.updateComment(messageId, comment);
     }
 
     @DELETE
-    public Comment deleteComment(@PathParam("messageId") Long messageId, Comment comment) {
-        return commentServcie.deleteComment(messageId, comment);
+    @Path("/{commentId}")
+    public Comment deleteComment(@PathParam("messageId") Long messageId, @PathParam("commentId") Long commentId) {
+        return commentServcie.deleteComment(messageId, commentId);
     }
 
 }
