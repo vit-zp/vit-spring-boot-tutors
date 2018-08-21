@@ -1,6 +1,7 @@
 package org.vit.java.tutor.arrays;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 
 public class ArraysUtil {
 
@@ -16,4 +17,12 @@ public class ArraysUtil {
 
     }
 
+    /*
+
+Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array.
+     */
+    public static int diffMaxMin(int[] intArr) {
+        IntSummaryStatistics intSummaryStatistics = Arrays.stream(intArr).summaryStatistics();
+        return intSummaryStatistics.getMax() - intSummaryStatistics.getMin();
+    }
 }

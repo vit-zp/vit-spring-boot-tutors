@@ -1,9 +1,9 @@
 package org.vit.java.tutor.arrays;
 
+import org.junit.Test;
+
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
-
-import org.junit.Test;
 
 public class ArraysUtilTest {
 
@@ -13,5 +13,12 @@ public class ArraysUtilTest {
 		int[] actualIntArray = {2, 1, 2, 3, 4};
 		
 		assertThat(ArraysUtil.countEvenElements(actualIntArray), is(3));
+	}
+
+	@Test
+	public void shouldReturnDiffBetweenMaxAndMin() {
+		int[] actualIntArray = {2, 1, 2, 3, 4};
+
+		assertThat(ArraysUtil.diffMaxMin(actualIntArray), is(3));
 	}
 }
