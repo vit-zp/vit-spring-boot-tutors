@@ -36,4 +36,23 @@ Given an array length 1 or more of ints, return the difference between the large
         IntSummaryStatistics intSummaryStatistics = Arrays.stream(intArr).summaryStatistics();
         return (int) (intSummaryStatistics.getSum() - (intSummaryStatistics.getMax() + intSummaryStatistics.getMin())) / ((int) intSummaryStatistics.getCount() - 2);
     }
+
+
+    /*
+    code below doesn't work due to NOT EFFECTIVELY FINAL skipNEXT vak
+     */
+    public static int sum13(int[] nums) {
+//        boolean skipNext = false;
+//        return Arrays.stream(nums).reduce((a, i)-> {
+//            if (i==13) {
+//                skipNext = true;
+//            } else if (skipNext) {
+//                skipNext = false;
+//            } else {
+//                a = a + i;
+//            }
+//            return a;
+//        }).get();
+        return 0;
+    }
 }
