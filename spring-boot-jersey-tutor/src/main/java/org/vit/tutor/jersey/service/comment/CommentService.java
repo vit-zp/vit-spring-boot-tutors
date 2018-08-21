@@ -1,9 +1,9 @@
 package org.vit.tutor.jersey.service.comment;
 
-import java.util.List;
-
 import org.springframework.stereotype.Service;
 import org.vit.tutor.jersey.model.Comment;
+
+import java.util.List;
 
 @Service
 public interface CommentService {
@@ -16,4 +16,5 @@ public interface CommentService {
 	
 	Comment deleteComment(Long messageId, Comment comment);
 
+	Comment getCommentById(Long messageId, Long commentId);
 }

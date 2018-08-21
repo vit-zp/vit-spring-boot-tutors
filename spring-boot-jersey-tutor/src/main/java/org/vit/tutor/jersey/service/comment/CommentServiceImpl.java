@@ -1,13 +1,13 @@
 package org.vit.tutor.jersey.service.comment;
 
-import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.vit.tutor.jersey.database.DatabaseSimulationStuff;
 import org.vit.tutor.jersey.model.Comment;
+
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Component
 public class CommentServiceImpl implements CommentService {
@@ -40,6 +40,11 @@ public class CommentServiceImpl implements CommentService {
 	@Override
 	public Comment deleteComment(Long messageId, Comment comment) {
 		return getCommentsByMessageId(messageId).remove(comment.getCommentId());
+	}
+
+	@Override
+	public Comment getCommentById(Long messageId, Long commentId) {
+		return getCommentsByMessageId(messageId).get(commentId);
 	}
 
 }
