@@ -21,4 +21,12 @@ public class ArraysUtilTest {
 
 		assertThat(ArraysUtil.diffMaxMin(actualIntArray), is(3));
 	}
+
+
+	@Test
+	public void shouldReturnCenteredAverage() {
+		int[] actualIntArray = {2, 1, 2, 3, 4};
+
+		assertThat(ArraysUtil.centeredAverage(actualIntArray), is(3));
+	}
 }
