@@ -2,7 +2,6 @@ package org.vit.tutor.jersey.resource.message;
 
 import java.util.List;
 
-import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -11,9 +10,11 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.vit.tutor.jersey.dto.assembler.MessageAssembler;
 import org.vit.tutor.jersey.model.Message;
 import org.vit.tutor.jersey.resource.comment.CommentResource;
 import org.vit.tutor.jersey.service.message.MessageService;
@@ -28,19 +29,23 @@ public class MessageResource {
 	@Autowired
 	private CommentResource commentResource;
 
+	@Autowired
+	private MessageAssembler messageAssembler;
 
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Message> getMessages(){
-		return messageService.getAllMessages();
+	public Response getMessages(){
+		return Response.ok(messageAssembler.toResources(messageService.getAllMessages()))
+				.build();
 		}
 	
 
 	@GET
 	@Path("/{messageId}")
 	@Produces(MediaType.APPLICATION_JSON)
-	public Message getMessage(@PathParam("messageId") Long messageId){
-		return messageService.getMessage(messageId);
+	public Response getMessage(@PathParam("messageId") Long messageId){
+		return Response.ok(messageAssembler.toResource(messageService.getMessage(messageId)))
+				.build();
 		}
 	
 	@POST

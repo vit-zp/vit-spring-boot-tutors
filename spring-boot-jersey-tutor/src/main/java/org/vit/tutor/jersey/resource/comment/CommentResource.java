@@ -2,14 +2,15 @@ package org.vit.tutor.jersey.resource.comment;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.vit.tutor.jersey.dto.assembler.CommentAssembler;
 import org.vit.tutor.jersey.model.Comment;
 import org.vit.tutor.jersey.service.comment.CommentService;
 
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
 import java.util.Date;
-import java.util.List;
 
 @Component
 @Path("/")
@@ -18,16 +19,21 @@ public class CommentResource {
 	
 	@Autowired
 	private CommentService commentServcie;
+	
+	@Autowired
+	private CommentAssembler commentAssembler;
 
 	@GET
-	public List<Comment> getAllComments(@PathParam("messageId") Long messageId){
-		return commentServcie.getAllComments(messageId);
+	public Response getAllComments(@PathParam("messageId") Long messageId){
+		return Response.ok(commentAssembler.toResources(commentServcie.getAllComments(messageId)))
+				.build();
 	}
 
     @GET
     @Path("/{commentId}")
-    public Comment getCommentById(@PathParam("messageId") Long messageId, @PathParam("commentId") Long commentId) {
-        return commentServcie.getCommentById(messageId, commentId);
+    public Response getCommentById(@PathParam("messageId") Long messageId, @PathParam("commentId") Long commentId) {
+        return Response.ok(commentAssembler.toResource(commentServcie.getCommentById(messageId, commentId)))
+				.build();
     }
 
     @POST
