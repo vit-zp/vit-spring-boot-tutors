@@ -1,12 +1,12 @@
-package org.vit.tutor.rest;
+package org.vit.security.tutor;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringBootRestTutorApplication {
+public class SpringBootSecurityTutorApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringBootRestTutorApplication.class, args);
+		SpringApplication.run(SpringBootSecurityTutorApplication.class, args);
 	}
 }
