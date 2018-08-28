@@ -1,11 +1,11 @@
-<databaseChangeLog
+<databaseChangeLog 
   xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
-         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd" >
          
-         	<include file="/changesets/01.changeset.create.users.table.xml"/>
-         	<include file="/changesets/02.changeset.create.roles.table.xml"/>
-         	<include file="/changesets/03.changeset.create.users_roles.table.xml"/>
-         	<include file="/changesets/04.changeset.default.data.users.roles.xml"/>
+         	<include file="classpath:db-changelog/changesets/01.changeset.create.users.table.xml" />
+         	<include file="classpath:db-changelog/changesets/02.changeset.create.roles.table.xml"/>
+         	<include file="classpath:db-changelog/changesets/03.changeset.create.users_roles.table.xml"/>
+         	<include file="classpath:db-changelog/changesets/04.changeset.default.data.users.roles.xml"/>
          </databaseChangeLog>
