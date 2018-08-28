@@ -4,7 +4,7 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
          
-         	<include file="/changesets/01.changeset.create.users.table.xml"/>
+         	<include file="changesets/01.changeset.create.users.table.xml"/>
          	<include file="/changesets/02.changeset.create.roles.table.xml"/>
          	<include file="/changesets/03.changeset.create.users_roles.table.xml"/>
          	<include file="/changesets/04.changeset.default.data.users.roles.xml"/>
