@@ -1,0 +1,23 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+         <changeSet id="01.changeset.create.table.user" author="Vit.Khodak" failOnError="false" dbms="h2">
+        <createTable tableName="Users">
+        	<column autoIncrement="true" name="USER_ID" type="LONG" >
+        		<constraints primaryKey="true" primaryKeyName="USER_ID_PK" nullable="false" unique="true" />
+        	</column>
+        	<column name="USER_NAME" type="VARCHAR(MAX)">
+        		<constraints nullable="false"/>
+        	</column>
+        	
+        	<column name="ENCRYTED_PASSWORD" type="VARCHAR(MAX)">
+        		<constraints nullable="false"/>
+        	</column>
+        	
+        	<column name="ENABLED" type="BIT" defaultValue="false">
+        	</column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

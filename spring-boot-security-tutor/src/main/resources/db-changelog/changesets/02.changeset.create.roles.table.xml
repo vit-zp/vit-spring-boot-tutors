@@ -1,0 +1,16 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.7"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd">
+         <changeSet id="02.changeset.create.table.roles" author="Vit.Khodak" failOnError="false" dbms="h2">
+        <createTable tableName="Roles">
+        	<column autoIncrement="true" name="ROLE_ID" type="BIGINT" >
+        		<constraints primaryKey="true" primaryKeyName="ROLE_ID_PK" nullable="false" unique="true" />
+        	</column>
+        	<column name="ROLE_NAME" type="VARCHAR(MAX)">
+        		<constraints nullable="false"/>
+        	</column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
