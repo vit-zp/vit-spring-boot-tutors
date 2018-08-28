@@ -7,7 +7,7 @@ import lombok.extern.java.Log;
 
 @RestController
 @Log
-public class HomeController {
+public class AboutController {
 	
 	private static final String APP_IS_UP_AND_RUNNING = "App is up and running...";
 
