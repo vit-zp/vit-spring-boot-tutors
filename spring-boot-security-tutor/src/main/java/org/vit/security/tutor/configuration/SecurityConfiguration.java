@@ -22,6 +22,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers(HttpMethod.GET, "/login").permitAll()
 		.antMatchers(HttpMethod.POST, "/login").permitAll()
 		.antMatchers(HttpMethod.GET, "/logout").permitAll()
+		.antMatchers(HttpMethod.GET, "/secured").hasAnyAuthority("ADMIN")
 		.anyRequest().authenticated();
 		super.configure(http);
 	}
