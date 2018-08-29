@@ -8,4 +8,5 @@
          	<include file="classpath:db-changelog/changesets/02.changeset.create.roles.table.xml"/>
          	<include file="classpath:db-changelog/changesets/03.changeset.create.users_roles.table.xml"/>
          	<include file="classpath:db-changelog/changesets/04.changeset.default.data.users.roles.xml"/>
+         	<include file="classpath:db-changelog/changesets/05.changeset.uniq_user_role.xml" />
          </databaseChangeLog>
