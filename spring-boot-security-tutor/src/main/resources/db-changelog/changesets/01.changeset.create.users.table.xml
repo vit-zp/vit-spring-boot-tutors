@@ -12,7 +12,7 @@
         		<constraints nullable="false"/>
         	</column>
         	
-        	<column name="ENCRYTED_PASSWORD" type="VARCHAR(MAX)">
+        	<column name="ENCRYPTED_PASSWORD" type="VARCHAR(MAX)">
         		<constraints nullable="false"/>
         	</column>
         	
