@@ -5,9 +5,12 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+import org.vit.security.tutor.entity.user.UserEntity;
 import org.vit.security.tutor.repository.user.UserRepository;
 
 @Service
+@Transactional
 public class AuthServerUserDetailsService implements UserDetailsService {
 	
 	@Autowired
@@ -15,9 +18,9 @@ public class AuthServerUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		
-		return userRepo.findByUserName(username);
+		UserEntity userEntity = userRepo.findByUserName(username);
+		userEntity.getRoles();
+		return userEntity;
 		
 	}
 

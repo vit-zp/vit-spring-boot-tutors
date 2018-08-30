@@ -4,16 +4,9 @@
   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.7
          http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.7.xsd" >
          
-<<<<<<< HEAD
          	<include file="classpath:db-changelog/changesets/01.changeset.create.users.table.xml" />
          	<include file="classpath:db-changelog/changesets/02.changeset.create.roles.table.xml"/>
          	<include file="classpath:db-changelog/changesets/03.changeset.create.users_roles.table.xml"/>
          	<include file="classpath:db-changelog/changesets/04.changeset.default.data.users.roles.xml"/>
          	<include file="classpath:db-changelog/changesets/05.changeset.uniq_user_role.xml" />
-=======
-         	<include file="changesets/01.changeset.create.users.table.xml"/>
-         	<include file="/changesets/02.changeset.create.roles.table.xml"/>
-         	<include file="/changesets/03.changeset.create.users_roles.table.xml"/>
-         	<include file="/changesets/04.changeset.default.data.users.roles.xml"/>
->>>>>>> branch 'master' of https://github.com/vit-zp/vit-spring-boot-tutors.git
          </databaseChangeLog>
